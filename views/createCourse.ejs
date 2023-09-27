@@ -3,7 +3,17 @@
 <%- include('./partials/header.ejs') %>
 <body>
     <%- include('./partials/nav.ejs') %>
-    <%- include('./partials/course_creator.ejs') %>
+    <div class="create_course">
+        <form action="/create_course" method="POST">
+            <label for="CourseName"> Title of course</label>
+            <input type="text" id="CourseName" name="CourseName" required>
+            <label for="CourseNumber"> Course Number</label>
+            <input type="text" id="CourseNumber" name="CourseNumber" required>
+            <label for="CourseDescription"> Course Description</label>
+            <textarea id="CourseDescription" name="CourseDescription"></textarea>
+            <button> Create Course</button>
+        </form>
+    </div>
 </body>
 <%- include('./partials/footer.ejs') %>
 </html>

@@ -3,6 +3,21 @@
 <%- include('./partials/header.ejs') %>
 <body>
     <%- include('./partials/nav.ejs') %>
+    <div class="teacher_content">
+        <h2>
+            Courses
+        </h2>
+        <% if (course.length > 0){ %>
+            <% course.forEach(course =>{  %>
+                <a class="single" href="/teacher/<%= course.id %>">
+                    <h2 class="title"><%= course.CourseName %></h2>
+                    <h3 class="num"><%= course.CourseNumber %></h3>
+                </a>
+            <% }) %>
+        <% }else{ %>
+            <p> No Courses</p>
+        <% } %>
+    </div>
 </body>
 <%- include('./partials/footer.ejs') %>
 </html>
