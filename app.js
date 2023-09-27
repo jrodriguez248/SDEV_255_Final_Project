@@ -1,7 +1,19 @@
 const express = require('express');
+const morgan = require('morgan');
+const mongoose = require('mongoose')
 const app = express();
+
+
+
+
 app.set('view engine','ejs');
+app.use(express.static('public'));
 app.listen(3000);
+
+
+app.get('/create_course', (req,res)=>{
+    res.render('createCourse',{title:'Create Course',siteName:'A Class Coding'})
+});
 app.get('/',(req,res)=>{
     res.render('index',{title:'Home',siteName:'A Class Coding'})
 });
