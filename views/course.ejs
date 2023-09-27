@@ -4,10 +4,10 @@
 <body>
     <%- include('./partials/nav.ejs') %>
     <div class="course_content">
-        <h2><%= course.course_name %></h2>
-        <h3><%= course.course_number %></h3>
+        <h2><%= course.CourseName %></h2>
+        <h3><%= course.CourseNumber %></h3>
         <div class="course_details">
-            <p><%= course.course_discription %></p>
+            <p><%= course.CourseDescription %></p>
         </div>
         <a class="delete" data-doc="<%= course.id %>">Delete</a>
     </div>
