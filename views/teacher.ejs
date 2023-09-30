@@ -10,8 +10,8 @@
         <% if (course.length > 0){ %>
             <% course.forEach(course =>{  %>
                 <a class="single" href="/teacher/<%= course.id %>">
-                    <h2 class="title"><%= course.CourseName %></h2>
-                    <h3 class="num"><%= course.CourseNumber %></h3>
+                    <h2 class="num"><%= course.CourseNumber %></h2>
+                    <h3 class="title"><%= course.CourseName %></h3>
                 </a>
             <% }) %>
         <% }else{ %>
