@@ -23,7 +23,35 @@ app.use((req,res, next) => {
 app.get('/create_course', (req,res)=>{
     res.render('createCourse',{title:'Create Course',siteName:'A Class Coding'})
 });
-
+app.get('/updateCourse/:id', (req,res)=>{
+    const id = req.params.id;
+    Course.findById(id)
+    .then(result=>{
+        res.render('updateCourse', {course:result,title:'Update',siteName:'A Class Coding: Teachers'});
+    })
+    .catch((err) => {
+        console.log(err);
+    })
+});
+app.post('/updateCourse/:id',(req,res) =>{
+    const id = req.params.id;
+    const name = req.body.CourseName;
+    const number = req.body.CourseNumber;
+    const des = req.body.CourseDescription;
+    const ch = req.body.CreditHours;
+    Course.findByIdAndUpdate(id,{
+        CouseName:name,
+        CourseNumber:number,
+        CourseDescription: des,
+        CreditHours: ch
+    })
+    .then(result =>{
+        res.redirect('/teacher');
+    })
+    .catch((err)=>{
+        console.log(err);
+    })
+})
 app.post('/create_course',(req,res) =>{
     console.log(req.body);
     const course = new Course(req.body);

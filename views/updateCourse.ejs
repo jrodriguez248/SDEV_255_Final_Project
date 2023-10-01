@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./partials/header.ejs') %>
+<body>
+    <%- include('./partials/nav.ejs') %>
+    <div class="create_course">
+        <form action="/updateCourse/<%= course.id%>" method="POST">
+            <label for="CourseName"> Title of course</label>
+            <input type="text" id="CourseName" name="CourseName" required>
+            <label for="CourseNumber"> Course Number</label>
+            <input type="text" id="CourseNumber" name="CourseNumber" required>
+            <label for="CourseDescription"> Course Description</label>
+            <textarea id="CourseDescription" name="CourseDescription"></textarea>
+            <label for="course_credit"> Number of Credit Hours</label>
+            <input type="number" id="CreditHours", name="CreditHours">
+            <button> Update Course</button>
+        </form>
+    </div>
+</body>
+<%- include('./partials/footer.ejs') %>
+</html>
