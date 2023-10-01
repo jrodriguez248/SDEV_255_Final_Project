@@ -13,6 +13,9 @@ const CourseSchema = new Schema({
     CourseDescription:{
         type: String,
         required: false
+    },
+    CreditHours:{
+        type:Number,
     }},{timestamps:true});
 
 const Course = mongoose.model('Course', CourseSchema);
